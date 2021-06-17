@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: steven-multitool2
+  name: steven-multitool2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: steven-multitool2
+  template:
+    metadata:
+      labels:
+        app: steven-multitool2
+    spec:
+      containers:
+      - image: harbor-repo.vmware.com/stevenpub/multitool
+        imagePullPolicy: Always
+        name: multitool2
+
